@@ -8,7 +8,8 @@
 ## [Potential Future Features](#potential-future-features)
 
 # Current Objectives
-1. Start coding Lexer
+1. Make Finite-State Machine Lexer
+2. Make unit testing files
 
 # Overview
 I've been interested in how programming languages actually work and how they are
@@ -57,7 +58,9 @@ declaration. Their values can also be reassigned:
     var1 = 4;
     var1 = 5;
 
-The final value of var1 is 5.
+The final value of var1 is 5. Variable names must start with a letter (upper or 
+lower case), and can include any alphanumeric characters or underscore (_). The
+variable name can be at most 30 characters.
 ### Comments
 There are comments available in MarvLang. Line comments can be started with the 
 '%' character. '%%%' will start or end a multiline comment, as seen below:
@@ -137,3 +140,6 @@ Signed 128-bit ratio of 2 64-bit longs.
 If, Else, If Else statements
 ### Loops
 For, While, For Each Loops
+### Global Variables
+Variables defined outside of expressions; Cannot be reassigned; Need to be 
+initialized when declared
