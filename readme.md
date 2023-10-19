@@ -1,15 +1,15 @@
 # MarvLang
-## Mathematical Toy Language by Marvin Odobashi
+## Numerical Toy Language by Marvin Odobashi
 
 # Table of Contents
-## [Current Objectives](#current-objectives)
-## [Overview](#overview)
-## [MarvLang Documentation](#marvlang-documentation)
-## [Potential Future Features](#potential-future-features)
+## [Current Objectives](#current-objectives-1)
+## [Overview](#overview-1)
+## [MarvLang Documentation](#marvlang-documentation-1)
+## [Potential Future Features](#potential-future-features-1)
 
 # Current Objectives
-1. Make Finite-State Machine Lexer
-2. Make unit testing files
+1. Make general unit testing files
+2. MAke unit tests for lexer
 
 # Overview
 I've been interested in how programming languages actually work and how they are
@@ -108,38 +108,38 @@ statements. Each one can be seen below:
 
 Variable value reassignment is included in "variable value assignments."
 
-## Potential Future Features
-### *type1*[]
+# Potential Future Features
+## *type1*[]
 Arrays of type *type1*, holding a given number of values of the same time, 
 indexable, and iterable through For Each loops
-### long
+## long
 Signed 64-bit integer, using Two's Complement for negative number
 representation. It can range from -9223372036854775808 to 9223372036854775807
 (-2^63 to 2^63 - 1)
-### uint
+## uint
 Unsigned 32-bit non-negative integer. It can range from 0 to 4294967295
 (0 to 2^32 - 1)
-### ulong
+## ulong
 Unsigned 64-bit non-negative integer. It can range from 0 to
 18446744073709551615 (0 to 2^64 - 1)
-### float
+## float
 Signed 32-bit precision decimal number. It uses 1 sign bit, 7 exponent bits, 
 24 significand bits (as per IEEE 754 standards).
-### double
+## double
 Signed 64-bit precision decimal number. It uses 1 sign bit, 10 exponent bits, 
 53 significand bits (as per IEEE 754 standards).
-### rational
+## rational
 Signed 64-bit ratio of 2 32-bit ints.
-### lrational
+## lrational
 Signed 128-bit ratio of 2 64-bit longs.
-### complex
+## complex
 64-bit number that holds two signed 32-bit ints (real and imaginary part)
-### lcomplex
+## lcomplex
 128-bit number that holds two signed 64-bit longs (real and imaginary part)
-### Control Flow Statements
+## Control Flow Statements
 If, Else, If Else statements
-### Loops
+## Loops
 For, While, For Each Loops
-### Global Variables
+## Global Variables
 Variables defined outside of expressions; Cannot be reassigned; Need to be 
 initialized when declared
