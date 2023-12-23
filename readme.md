@@ -8,8 +8,8 @@
 ## [Potential Future Features](#potential-future-features-1)
 
 # Current Objectives
-1. Make general unit testing files
-2. MAke unit tests for lexer
+1. Start working on Syntactic Analysis and Semantic Analysis
+2. Add more test source files
 
 # Overview
 I've been interested in how programming languages actually work and how they are

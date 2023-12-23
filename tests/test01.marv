@@ -1,0 +1,12 @@
+int myFunction() {
+    int var1 = 34;
+    int var2 = 43;
+    int var3 = var1 + var2;
+    return var3;
+}
+
+int main(int arg1, int arg2) {
+    int var1 = arg1 + arg2;
+    int var2 = myFunction();
+    return var1 * var2;
+}

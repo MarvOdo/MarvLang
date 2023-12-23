@@ -1,0 +1,16 @@
+int myFunction(int a1, int a2) {
+    int var1 = 34;
+    int var2 = 43;
+    int var3 = var1 ^ var2;
+    int var4 = var2 & var1;
+    int var5 = var4 | var3;
+    int var6 = var1 * var5;
+    return var3;
+}
+
+int main(int arg1, int arg2, int arg3) {
+    int var1 = arg1 >> arg2;
+    int var2 = myFunction(var1, 5);
+    int var1234 = var2 - 12;
+    return var1 / var2;
+}

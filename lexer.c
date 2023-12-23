@@ -5,18 +5,15 @@
 */
 #include "lexer.h"
 
-// Helper function to open file and return FILE* to it, otherwise throw error
-// if file cannot be opened
-FILE *read_file(char fname[])
-{
-    FILE *result = fopen(fname, "r");
-    if (result != NULL)
-    {
-        return result;
-    }
-    fprintf(stderr, "INPUT ERROR: Could not open file at %s\n", fname);
-    exit(1);
-}
+/**
+ * enum State - used to keep track of state of finite state machine in lexer
+*/
+enum State {
+    SOURCE,
+    STRING,
+    NUMBER,
+    OTHER
+};
 
 // convert single char into token code
 long get_char_token(char c)
@@ -300,38 +297,4 @@ struct TokenList *lexer(FILE *fptr)
     }
 
     return result;
-}
-
-//main to be moved to other file once lexer is done
-int main(int argc, char *argv[])
-{
-    FILE *code_stream;
-    if (argc == 1)
-    {
-        code_stream = stdin;
-    }
-    else if (argc == 2)
-    {
-        code_stream = read_file(argv[1]);
-    }
-    else
-    {
-        fprintf(stderr, "INPUT ERROR: Too many command line arguments\n");
-        exit(1);
-    }
-    struct TokenList *token_stream = lexer(code_stream);
-    //right now just prints token codes or values in order
-    //FUTURE: will use tokens to make syntax tree
-    for (int i = 0; i < token_stream->size; i++)
-    {
-        if (token_stream->array[i].code <= 100)
-        {
-            printf("Token Code: %ld\n", token_stream->array[i].code);
-        }
-        else
-        {
-            printf("Token Value: %s\n", token_stream->array[i].value);
-        }
-    }
-    return 0;
 }

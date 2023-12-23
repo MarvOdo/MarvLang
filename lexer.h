@@ -60,16 +60,6 @@ struct TokenList {
 };
 
 /**
- * enum State - used to keep track of state of finite state machine in lexer
-*/
-enum State {
-    SOURCE,
-    STRING,
-    NUMBER,
-    OTHER
-};
-
-/**
  * Parameters: FILE* fpr - input file stream
  * Returns: struct TokenList* - pointer to array of Tokens
  * 

@@ -6,8 +6,11 @@ CFLAGS = -std=c17 -Wall -Werror -pedantic -g
 
 .PHONY : clean
 
-lexer : lexer.o
+test : test.o lexer.o
 	${CC} ${CFLAGS} -o $@ $^
+
+test.o : test.c lexer.h
+	${CC} ${CFLAGS} -c $^
 
 lexer.o : lexer.c lexer.h
 	${CC} ${CFLAGS} -c $^
@@ -15,4 +18,4 @@ lexer.o : lexer.c lexer.h
 clean :
 	rm -rf *.o
 	rm -rf *.gch
-	rm -rf lexer
+	rm -rf test
