@@ -17,10 +17,9 @@ enum NodeType
 {
     SOURCE, //child nodes are all the function definitions of the file
     FUNCDEF, //child nodes are parameters; last child is a "STATEMENTS" node; id is name of function
-    MAINDEF, //child nodes are parameters; last child is a "STATEMENTS" node; id is "main"
-    PARAM, //id is name of parameter
     STATEMENTS, //child nodes are all the statements in a function
-    ASSIGNSTMT, //id is name being assigned, single child is an expression
+    INITSTMT, //id is name of variable being declared / initiazlied
+    REASSIGNSTMT, //id is name being reassigned, single child is an expression
     RETSTMT, //single child is expression being returned
     CONSTANT, //value stores the value of the literal
     VARIABLE, //id is name of variable
@@ -58,8 +57,11 @@ struct ParseNode
     int value;
 
     struct ParseNode *parent; //pointer to parent node
-    struct ParseNode **children; //array of pointers to child nodes, used differently for each type of node
+    struct ParseNode *children; //pointer to first child node, used differently for each type of node
+    struct ParseNode *next_sibling; //points to sibling if there is one, such that parent only needs to store 1 pointer to first child
     size_t num_children; //stores number of children
+
+
 };
 
 /**
